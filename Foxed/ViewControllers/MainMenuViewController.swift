@@ -10,29 +10,37 @@ import UIKit
 
 class MainMenuViewController: UIViewController {
     
+    private let reuseIdentifier = "GameCell"
+    
+    private let sectionInsets = UIEdgeInsets(top: 50.0,
+                                             left: 20.0,
+                                             bottom: 50.0,
+                                             right: 20.0)
+    
+    private var games: [Game] = []
     
     @IBOutlet weak var gamesCollection: UICollectionView!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-//        gamesCollection.delegate = self
+        gamesCollection.delegate = self
         gamesCollection.dataSource = self
+        
+        games.append(Game(name: "Kings Cup", description: "Kings cup is fun", imageName: "SampleGameImage"))
+        games.append(Game(name: "Kings Cup", description: "High or low is also fun", imageName: "SampleGameImage"))
         
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        // Hide the navigation bar on the this view controller
-        self.navigationController?.setNavigationBarHidden(true, animated: animated)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         
-        // Show the navigation bar on other view controllers
-        self.navigationController?.setNavigationBarHidden(false, animated: animated)
     }
     
 
@@ -46,39 +54,74 @@ class MainMenuViewController: UIViewController {
     }
     */
     
-    private let itemsPerRow: CGFloat = 3
+    private let itemsPerRow: CGFloat = 1.5
 
+}
+
+extension MainMenuViewController {
+    func game(for indexPath: IndexPath) -> Game {
+        return games[indexPath.row]
+    }
 }
 
 extension MainMenuViewController : UICollectionViewDataSource
 {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 4
+        return games.count
     }
-    
+
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
-    
-    
+
+
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+//        let cell = collectionView
+//            .dequeueReusableCell(withReuseIdentifier: "GameCell", for: indexPath) as! GameSquareCell
+//        //cell.label.text = "HULLO"
+//        cell.populate(with: game(for: indexPath))
+//
+//
+//        // Configure the cell
+//        return cell
+        
+        let g = game(for: indexPath)
         let cell = collectionView
-            .dequeueReusableCell(withReuseIdentifier: "GameCell", for: indexPath) as! GameSquareCell
-        //cell.label.text = "HULLO"
-        let game = Game(name: "Kings Cup", description: "A fun game")
-        cell.populate(with: game)
+            .dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! GameCell
+        cell.backgroundColor = .black
+        cell.gameImage.image = UIImage(named: g.imageName)
+        cell.gameDescription.text = g.description
         
-        
-        // Configure the cell
         return cell
     }
-    
-    
+
+
 }
 
-//extension MainMenuViewController : UICollectionViewDelegateFlowLayout
-//{
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-//        return CGSize(width: 200, height: 200)
-//    }
-//}
+extension MainMenuViewController : UICollectionViewDelegateFlowLayout
+{
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        sizeForItemAt indexPath: IndexPath) -> CGSize {
+        //2
+        let paddingSpace = sectionInsets.left * (itemsPerRow + 1)
+        let availableWidth = view.frame.width - paddingSpace
+        let widthPerItem = availableWidth / itemsPerRow
+        
+        return CGSize(width: widthPerItem, height: widthPerItem)
+    }
+    
+    //3
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        insetForSectionAt section: Int) -> UIEdgeInsets {
+        return sectionInsets
+    }
+    
+    // 4
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return sectionInsets.left
+    }
+}

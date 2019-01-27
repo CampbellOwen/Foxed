@@ -11,4 +11,5 @@ import Foundation
 struct Game {
     var name: String
     var description: String
+    var imageName: String
 }

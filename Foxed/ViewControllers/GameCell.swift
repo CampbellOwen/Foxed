@@ -1,5 +1,5 @@
 //
-//  GameSquareCell.swift
+//  GameCell.swift
 //  Foxed
 //
 //  Created by Owen Campbell on 2019-01-26.
@@ -8,11 +8,8 @@
 
 import UIKit
 
-class GameSquareCell: UICollectionViewCell {
+class GameCell: UICollectionViewCell {
     
+    @IBOutlet weak var gameImage: UIImageView!
     @IBOutlet weak var gameDescription: UILabel!
-    
-    func populate(with model: Game) {
-        gameDescription.text = model.description
-    }
 }
