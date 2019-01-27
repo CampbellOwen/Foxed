@@ -28,8 +28,8 @@ class MainMenuViewController: UIViewController {
         gamesCollection.delegate = self
         gamesCollection.dataSource = self
         
-        games.append(Game(name: "Kings Cup", description: "Draw cards and drinks until all four kings are drawn", imageName: "SampleGameImage"))
-        games.append(Game(name: "Kings Cup", description: "High or low is also fun", imageName: "SampleGameImage"))
+        games.append(Game(name: "Kings Cup", description: "Draw cards and drinks until all four kings are drawn", imageName: "KingsCup"))
+        games.append(Game(name: "Kings Cup", description: "High or low is also fun", imageName: "KingsCup"))
         
     }
     
@@ -54,7 +54,7 @@ class MainMenuViewController: UIViewController {
     }
     */
     
-    private let itemsPerRow: CGFloat = 1.5
+    private let itemsPerRow: CGFloat = 1
 
 }
 
@@ -88,7 +88,7 @@ extension MainMenuViewController : UICollectionViewDataSource
         let g = game(for: indexPath)
         let cell = collectionView
             .dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! GameCell
-        cell.backgroundColor = .black
+        cell.backgroundColor = .gray
         cell.gameImage.image = UIImage(named: g.imageName)
         cell.gameDescription.text = g.description
         
@@ -108,7 +108,8 @@ extension MainMenuViewController : UICollectionViewDelegateFlowLayout
         let availableWidth = view.frame.width - paddingSpace
         let widthPerItem = availableWidth / itemsPerRow
         
-        return CGSize(width: widthPerItem, height: widthPerItem)
+//        return CGSize(width: widthPerItem, height: widthPerItem)
+        return CGSize(width: 279, height: 250)
     }
     
     //3
