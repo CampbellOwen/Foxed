@@ -20,7 +20,7 @@ class MainMenuViewController: UIViewController {
         // Do any additional setup after loading the view.
         
         games.append(Game(name: "Kings Cup", description: "Draw cards and drinks until all four kings are drawn", imageName: "KingsCup"))
-        games.append(Game(name: "Kings Cup", description: "High or low is also fun", imageName: "KingsCup"))
+        games.append(Game(name: "Kings Cup", description: "High or low is also fun", imageName: "HighLow"))
         gameCollection.register(UINib(nibName: reuseIdentifier, bundle: nil), forCellWithReuseIdentifier: reuseIdentifier)
         gameCollection.dataSource = self
     }
