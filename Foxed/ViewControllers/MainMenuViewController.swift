@@ -28,7 +28,7 @@ class MainMenuViewController: UIViewController {
         gamesCollection.delegate = self
         gamesCollection.dataSource = self
         
-        games.append(Game(name: "Kings Cup", description: "Kings cup is fun", imageName: "SampleGameImage"))
+        games.append(Game(name: "Kings Cup", description: "Draw cards and drinks until all four kings are drawn", imageName: "SampleGameImage"))
         games.append(Game(name: "Kings Cup", description: "High or low is also fun", imageName: "SampleGameImage"))
         
     }
