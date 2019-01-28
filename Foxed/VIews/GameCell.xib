@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Nunito-Regular.ttf">
+            <string>Nunito-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="GameCell" id="gTV-IL-0wX" customClass="GameCell" customModule="Foxed" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="280" height="250"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="280" height="250"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Ud-xK-BFU">
+                        <rect key="frame" x="0.0" y="0.0" width="280" height="250"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="KingsCup" translatesAutoresizingMaskIntoConstraints="NO" id="UsE-uB-LV7">
+                                <rect key="frame" x="0.0" y="0.0" width="280" height="188"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="kahsdflkjhadflgkjhdflkghsdlfkjghsdlkfjhglksdjfhg" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ni0-5K-R2W">
+                                <rect key="frame" x="0.0" y="198" width="280" height="38.5"/>
+                                <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="ni0-5K-R2W" firstAttribute="top" secondItem="UsE-uB-LV7" secondAttribute="bottom" constant="10" id="JuG-L5-6v6"/>
+                            <constraint firstItem="UsE-uB-LV7" firstAttribute="top" secondItem="8Ud-xK-BFU" secondAttribute="top" id="OpB-5M-z3i"/>
+                            <constraint firstAttribute="trailing" secondItem="ni0-5K-R2W" secondAttribute="trailing" id="ZPL-8a-ylh"/>
+                            <constraint firstItem="UsE-uB-LV7" firstAttribute="leading" secondItem="8Ud-xK-BFU" secondAttribute="leading" id="bEx-yu-wIc"/>
+                            <constraint firstItem="ni0-5K-R2W" firstAttribute="leading" secondItem="8Ud-xK-BFU" secondAttribute="leading" id="ia9-bT-Y8I"/>
+                            <constraint firstAttribute="trailing" secondItem="UsE-uB-LV7" secondAttribute="trailing" id="y6i-Qr-uOp"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="8Ud-xK-BFU" secondAttribute="bottom" id="Jyx-2m-qRU"/>
+                <constraint firstItem="8Ud-xK-BFU" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="Um3-k1-qhx"/>
+                <constraint firstAttribute="trailing" secondItem="8Ud-xK-BFU" secondAttribute="trailing" id="lgk-cQ-G8A"/>
+                <constraint firstItem="8Ud-xK-BFU" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="pB2-AN-CKA"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <connections>
+                <outlet property="gameDescription" destination="ni0-5K-R2W" id="2Es-uX-MkY"/>
+                <outlet property="gameImage" destination="UsE-uB-LV7" id="UCN-lh-j2T"/>
+            </connections>
+            <point key="canvasLocation" x="52.799999999999997" y="48.575712143928037"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="KingsCup" width="279" height="188.5"/>
+    </resources>
+</document>

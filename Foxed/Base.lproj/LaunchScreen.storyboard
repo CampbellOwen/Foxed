@@ -18,18 +18,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="FQW-kk-elC">
-                                <rect key="frame" x="107.5" y="233.5" width="160" height="200"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LogoWithCopy" translatesAutoresizingMaskIntoConstraints="NO" id="F6A-LH-NBw">
+                                <rect key="frame" x="130" y="233.5" width="115" height="200"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="200" id="diA-MH-evY"/>
-                                    <constraint firstAttribute="width" constant="160" id="etY-LH-CKE"/>
+                                    <constraint firstAttribute="height" constant="200" id="42J-Ry-OpR"/>
+                                    <constraint firstAttribute="width" constant="115" id="oub-D1-rAc"/>
                                 </constraints>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="FQW-kk-elC" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="fMT-bi-kyM"/>
-                            <constraint firstItem="FQW-kk-elC" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="nFw-3z-hOf"/>
+                            <constraint firstItem="F6A-LH-NBw" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="PPm-1t-BGq"/>
+                            <constraint firstItem="F6A-LH-NBw" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="oQY-D8-dib"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -40,6 +40,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Logo" width="328.5" height="491.5"/>
+        <image name="LogoWithCopy" width="147" height="255"/>
     </resources>
 </document>
